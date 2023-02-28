@@ -6,7 +6,11 @@ import {
     Platform,
     ScrollView,
 } from "react-native";
-import { Feather } from "@expo/vector-icons";
+
+import { showMessage, hideMessage } from "react-native-flash-message";
+
+
+import Feather from "react-native-vector-icons/Feather";
 
 import getColorScheme from "../component/ColorsMode";
 
@@ -32,11 +36,17 @@ export default function RegisterScreen(props: any) {
             password === "" ||
             confirmPassword === ""
         ) {
-            alert("Please fill all the fields");
+            showMessage({
+                message: "Please fill all the fields",
+                type: "danger",
+            });
             return;
         }
         if (password !== confirmPassword) {
-            alert("Password and confirm password are not the same");
+            showMessage({
+                message: "Password and confirm password are not the same",
+                type: "danger",
+                });
             return;
         }
         const res = await api.register(
@@ -46,16 +56,17 @@ export default function RegisterScreen(props: any) {
         );
         console.log(JSON.stringify(res, null, 4));
         if (res.data.access_token) {
-            dispatch(login(username, res.access_token));
+            dispatch(login(res.access_token));
         } else {
-            alert(
-                "Network error: [" +
+            showMessage({
+                message: "Network error: [" +
                     res.status +
                     "] " +
                     res.data.error +
                     " " +
-                    res.data.message
-            );
+                    res.data.message,
+                    type: "danger"
+                });
         }
     };
 

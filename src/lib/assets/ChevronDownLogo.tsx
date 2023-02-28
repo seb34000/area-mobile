@@ -1,5 +1,5 @@
 import React from "react";
-import { Entypo } from "@expo/vector-icons";
+import Entypo from "react-native-vector-icons/Entypo";
 
 export default function ChevronDownLogo(
     color: string,

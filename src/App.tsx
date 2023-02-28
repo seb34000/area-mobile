@@ -135,6 +135,7 @@ function MainNavigation({ user }: any) {
 					</>
 				)}
 			</Tab.Navigator>
+			
 		</View>
 		// </NavigationContainer>
 	)

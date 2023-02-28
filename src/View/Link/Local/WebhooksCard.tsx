@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 
 import { SectionList, View, Text } from 'react-native'
 import DropDownPicker, { ItemType } from 'react-native-dropdown-picker'
+import { showMessage } from 'react-native-flash-message'
 import Button from '../../../component/Button'
 import getColorScheme from '../../../component/ColorsMode'
 import PressableIcon from '../../../component/PressableIcon'
@@ -128,7 +129,10 @@ export default function WebhooksCard(props: Props) {
 												(e) => e.event === evt && e.argument === is
 											)
 											if (webhook === undefined) {
-												alert('Webhook not found')
+												showMessage({
+													message:'Webhook not found',
+													type:'danger'
+												})
 												return
 											}
 											// alert(JSON.stringify(webhook?.id))

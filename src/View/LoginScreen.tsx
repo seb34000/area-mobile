@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { View, StyleSheet, KeyboardAvoidingView, Platform, ScrollView, Text } from 'react-native'
 import { useDispatch } from 'react-redux'
 import { WebView } from 'react-native-webview'
-import { Feather } from '@expo/vector-icons'
+import Feather from "react-native-vector-icons/Feather";
 
 import Button from '../component/Button'
 import getColorScheme from '../component/ColorsMode'
@@ -22,6 +22,9 @@ import TwitchLogo from '../lib/assets/TwitchLogo'
 import CoinbaseLogo from '../lib/assets/CoinbaseLogo'
 import PhillipeHueLogo from '../lib/assets/PhillipHueLogo'
 import RedditLogo from '../lib/assets/RedditLogo'
+import { showMessage, hideMessage } from "react-native-flash-message";
+
+
 
 // console.log(document.cookie, window.location);
 // alert(window.location);
@@ -44,7 +47,9 @@ export default function LoginScreen(props: any) {
 	const onClick = async () => {
 		console.log('Login')
 		if (email === '' || password === '') {
-			alert('Please fill all the fields')
+			showMessage({message:'Please fill all the fields',
+			type:'danger'
+			})
 			return
 		}
 		let res = await api.login(email, password)
@@ -52,7 +57,10 @@ export default function LoginScreen(props: any) {
 			const token: string = res.headers['set-cookie'][0].split(';')[0].split('=')[1]
 			dispatch(login(token))
 		} else {
-			alert('Network error: [' + res.status + '] ' + res.data.error + ' ' + res.data.message)
+			showMessage({
+				message:'Network error: [' + res.status + '] ' + res.data.error + ' ' + res.data.message,
+				type:'danger'
+			})
 		}
 	}
 

@@ -22,7 +22,7 @@ import api from '../../lib/api/api'
 import { logout, profile } from '../../store/action/userAction'
 import GithubLogo from '../../lib/assets/GithubLogo'
 import PressableIcon from '../../component/PressableIcon'
-import { AntDesign } from '@expo/vector-icons'
+import AntDesign from "react-native-vector-icons/AntDesign";
 import PhillipeHueLogo from '../../lib/assets/PhillipHueLogo'
 import CModal from '../../component/Modal'
 import EditProfileModal from './Local/editProfileModal'

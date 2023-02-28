@@ -8,7 +8,7 @@ import Picker from '../../../component/Picker'
 import PressableIcon from '../../../component/PressableIcon'
 import api from '../../../lib/api/api'
 
-import { Ionicons } from '@expo/vector-icons'
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 import ChevronDownLogo from '../../../lib/assets/ChevronDownLogo'
 import ChevronUpLogo from '../../../lib/assets/ChevronUpLogo'
