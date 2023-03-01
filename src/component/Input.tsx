@@ -29,7 +29,7 @@ export default function Input({
         }
         return {
             borderColor: color.accent,
-            shadow: color.shadow,
+            shadowColor : color.shadow,
             backgroundColor: color.background2,
             color: color.text,
         };
