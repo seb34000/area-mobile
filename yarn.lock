@@ -6226,7 +6226,7 @@ react-native-modal@^13.0.1:
 
 react-native-reanimated@^3.0.0:
   version "3.0.0"
-  resolved "https://registry.npmjs.org/react-native-reanimated/-/react-native-reanimated-3.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-3.0.0.tgz#03389efd8464b0ee1da18eb4e0bac28157c2b258"
   integrity sha512-GPyUrLZHK+kou0I5PTMWNUkAaJ26ndk/MD2hcA1F8U69RSMmtzJuKUxK2C7uz3Y72W1eFunuDgsNCoLi0+W1vg==
   dependencies:
     "@babel/plugin-transform-object-assign" "^7.16.7"
