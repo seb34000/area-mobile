@@ -9,4 +9,4 @@ RUN npm install
 # Copy source files
 COPY . .
 
-ENTRYPOINT [ "/usr/src/app/entrypoint.sh" ]
+ENTRYPOINT [ "./entrypoint.sh" ]
