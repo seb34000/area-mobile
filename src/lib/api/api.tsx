@@ -5,8 +5,8 @@ class API {
 	api: AxiosInstance
 	constructor() {
 		this.api = axios.create({
-			// baseURL: `${HOST_API}:${PORT_API}`,
-			baseURL: `http://192.168.1.37:${PORT_API}`,
+			baseURL: `${HOST_API}:${PORT_API}`,
+			//baseURL: `http://192.168.1.37:${PORT_API}`,
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded',
 			},
